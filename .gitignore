@@ -1,0 +1,4 @@
+*.zip
+out/*
+package/*
+temp/*

@@ -1,0 +1,60 @@
+#!/system/bin/sh
+#Remove ads with ease
+#by broodplank
+
+echo
+echo "Auto Remove ads"
+echo
+
+echo "Mounting system rw"
+busybox mount -o remount rw /system
+
+
+if [ -e /system/etc/hosts.old ]; then
+	echo
+	echo "hosts.old existing, assuming reverse operation, restoring original hosts file";
+	busybox mv -f /system/etc/hosts.old /system/etc/hosts
+	echo
+	echo "Setting correct permissions"
+	busybox chmod 644 /system/etc/hosts
+	echo
+	echo "Done!"
+
+else
+
+	echo "Renaming current hosts file to hosts.old"
+	busybox mv -f /system/etc/hosts /system/etc/hosts.old
+    echo
+	echo "Checking connection"
+	if [ -e /sdcard/conntest ]; then
+		rm /sdcard/conntest
+	fi;
+
+	ping -w5 -c1 8.8.8.8 > /dev/null || ping -w5 -c1 8.8.4.4 > /dev/null 2>&1 && echo "up" > /sdcard/conntest || echo "down" > /sdcard/conntest
+	READCONN=`cat /sdcard/conntest`;
+
+	if [ ${READCONN} = "down" ]; then
+		
+		echo "Connection is DOWN"
+		echo "please enable data connection or WiFi and retry"
+		echo
+		echo "Restoring original hosts file"
+		busybox mv -f /system/etc/hosts.old /system/etc/hosts
+		echo
+		echo "Done"
+
+	else
+		echo "Connection is UP"
+		echo
+		echo "Downloading hosts file from broodplank.net"
+		busybox wget http://www.broodplank.net/files/hosts -P /system/etc/
+
+		echo
+		echo "Setting correct permissions"
+		busybox chmod 644 /system/etc/hosts
+
+		echo
+		echo "All done! Enjoy no ads"
+		
+	fi;	
+fi;

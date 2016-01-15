@@ -1,0 +1,26 @@
+ro.qrom.beaconkey=0M000V5PH01B6QQD
+ro.qrom.product.device=GT-I9205
+ro.qrom.product.device.brand=samsung
+ro.qrom.build.brand=tos
+ro.qrom.build.os=android4.4.2
+ro.qrom.otapath=/data/media/0
+
+qrom_disposeIcon_enable=1
+qrom_permission_enable=1
+
+#
+ro.qrom.build.version.snflag=ADRQRTOS
+ro.qrom.build.version.snver=01
+#need edit
+ro.qrom.build.version.day=151028
+ro.qrom.build.version.name=ADRQRTOS01_M
+ro.qrom.build.version.number=01151028
+ro.qrom.build.version.type=M
+#need edit
+ro.qrom.build.number=3
+ro.qrom.build.lc=A1B2C3000D4E5F6
+ro.qrom.build.lcid=99
+#need edit
+ro.qrom.build.date=Wed OCT 28 21:01:25 CST 2015
+ro.qrom.build.date.utc=1446014851
+ro.qrom.build.type=mod
