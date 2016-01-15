@@ -2,6 +2,7 @@
 #app/Sample.apk
 #etc/SampleDir
 #################
+app/Superuser.apk
 app/Launcher3.apk
 app/ApplicationGuide.apk
 app/ApplicationsProvider.apk
