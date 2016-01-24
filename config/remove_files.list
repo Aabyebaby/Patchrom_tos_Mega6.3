@@ -1,7 +1,7 @@
-##### sample ####
-#app/Sample.apk
-#etc/SampleDir
-#################
+#"*******************"#
+#"****   App  ****"#
+#"*******************"#
+#
 app/BasicDreams.apk
 app/Browser.apk
 app/Calculator.apk
@@ -23,6 +23,12 @@ app/SoundRecorder.apk
 app/Superuser.apk
 app/TelephonyProvider.apk
 app/VideoEditor.apk
+#
+#
+#"*******************"#
+#"*   Priv-app   *"#
+#"*******************"#
+#
 priv-app/CalendarProvider.apk
 priv-app/Contacts.apk
 priv-app/ContactsProvider.apk
